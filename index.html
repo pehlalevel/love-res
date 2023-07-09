@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOU ❤</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="media/heart_144.png" type="image/x-icon">
+</head>
+<body">
+    <div class="container">
+        <h3><< Select the resolution of heart >></h3>
+        <div class="heart">
+            <img src="media/heart_144.png" id="imgPreview">
+            <p class="you">Y0U❤</p>
+            <audio src="media/music.mp3" id="ad"></audio>
+        </div>
+        <div class="resolution">
+            <select name="144p" id="res" onchange="help()">
+                <option value="0" selected>Select</option>
+                <option value="144">144p</option>
+                <option value="240">240p</option>
+                <option value="720">720p</option>
+                <option value="1080">1080p</option>
+            </select>
+        </div>
+    </div>
+    <script>
+        img144 = 'media/heart_144.png'
+        img240 = 'media/heart_240.png'
+        img720 = 'media/human_720.png'
+        
+        function help(){
+            preview = document.getElementById('imgPreview');
+            txtP = document.querySelector('.you');
+            txt = document.getElementById('res').value;
+            audio = document.getElementById('ad');
+            audio.play()
+
+            if (txt==240) {
+                preview.src = img240;
+                preview.style.display ='flex';
+                txtP.style.display='none';
+            } if(txt==144) { 
+                preview.style.display ='flex';
+                txtP.style.display='none';
+                preview.src = img144;
+            }
+            if(txt==720){
+                preview.style.display ='flex';
+                txtP.style.display='none';
+                preview.src = img720;
+            }
+            if(txt==1080){
+                preview.style.display ='none';
+                txtP.style.display='flex';
+            }
+            if(txt==0){
+                preview.style.display ='none';
+                txtP.style.display='none';
+            }
+        }
+
+    </script>
+</body>
+</html>

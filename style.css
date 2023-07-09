@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    cursor: url(media/Heart.cur), pointer;
+    overflow: hidden;
+}
+
+.container{
+    height: 360px;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+}
+
+.heart{
+    width: auto;
+    height: 320px;
+}
+
+img{
+    width: auto;
+    height: 300px;
+    margin-bottom: 40px;
+    filter: drop-shadow(0 0 10px red);
+    -webkit-filter: drop-shadow(0 0 10px red);
+    animation: zoom-in 0.5s linear;
+    display: none;
+}
+
+.youCont{
+    width: auto;
+    height: 300px;
+}
+
+p{
+    color: red;
+    font-size: 80px;
+    font-weight: 600;
+    margin-top: 150px;
+    text-shadow: 0px 0px 20px red;
+    animation: tilt-n-move 0.4s infinite, zoom-in 1.2s linear;
+    display: none;
+}
+
+h3{
+    color: red;
+    font-size: 20px;
+    text-align: center;
+    text-shadow: 0px 0px 6px red;   
+}
+
+select,option{
+    width: 70px;
+    height: 25px;
+    border-radius: 6px;
+    border: 2px solid red;
+    color: red;
+    font-weight: 600;
+    outline: 2px solid #fff;
+}
+select:hover{
+    color: #fff;
+    background: red;
+    border: 2px solid #fff;
+    transition: 0.5s;
+}
+
+
+@keyframes tilt-n-move{
+    0%{ transform: translate(0,0) rotate(0deg);}
+    25%{ transform: translate(5px,5px) rotate(10deg);}
+    50%{ transform: translate(0,0) rotate(0deg);}
+    75%{ transform: translate(-5px,-5px) rotate(-10deg);}
+    100%{ transform: translate(0,0) rotate(0deg);}
+}
+
+@keyframes zoom-in{
+    0%{ transform: scale(400%);}
+}
